@@ -1,0 +1,15 @@
+# import Post, PostSubscriptionPayload from "./generated/prisma.graphql"
+
+type Query {
+  allPosts: [Post!]!
+}
+
+type Mutation {
+  createDraft(title: String!, text: String): Post
+  deletePost(id: ID!): Post
+  publish(id: ID!): Post
+}
+
+type Subscription {
+  newPost: PostSubscriptionPayload
+}
